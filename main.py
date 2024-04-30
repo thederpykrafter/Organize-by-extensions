@@ -1,8 +1,8 @@
 import os
 import shutil
 
-downloads_folder = "Downloads"
-# downloads_folder = "%userprofile%\Downloads"
+# downloads_folder = "Downloads"
+downloads_folder = "C:\\Users\\thede\\Downloads"
 total_files_moved = 0
 
 # Get list of files in the Downloads folder
