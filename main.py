@@ -3,8 +3,16 @@
 import os
 import shutil
 
-# downloads_folder = "Downloads"
-downloads_folder = "C:\\Users\\thede\\Downloads"
+# linux
+if os.path.isdir("/home/thederpykrafter/Downloads/"):
+    downloads_folder = "/home/thederpykrafter/Downloads/"
+# termux
+elif os.path.isdir("/data/data/com.termux/files/home/storage/downloads"):
+    downloads_folder = "/data/data/com.termux/files/home/storage/downloads"
+# windows
+elif os.path.isdir("C:\\Users\\thede\\Downloads"):
+    downloads_folder = "C:\\Users\\thede\\Downloads"
+
 total_files_moved = 0
 
 # Get list of files in the Downloads folder
