@@ -37,7 +37,10 @@ for file_name in files:
             print(f"Created new directory: {file_extension}")
 
         # Move the file to the folder with matching extension
-        shutil.move(file_path, os.path.join(folder_path, file_name))
-        total_files_moved += 1
+        if not file_name.startswith("."):
+            shutil.move(file_path, os.path.join(folder_path, file_name))
+            total_files_moved += 1
+            print(f"Moved file: {file_name}")
 
-print(f"Download files sorted: {total_files_moved}")
+        if total_files_moved > 0:
+            print(f"Download files sorted: {total_files_moved}")
