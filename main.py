@@ -42,5 +42,5 @@ for file_name in files:
             total_files_moved += 1
             print(f"Moved file: {file_name}")
 
-        if total_files_moved > 0:
-            print(f"Download files sorted: {total_files_moved}")
+if total_files_moved > 0:
+    print(f"Download files sorted: {total_files_moved}")
