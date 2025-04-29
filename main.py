@@ -40,4 +40,4 @@ for file_name in files:
         shutil.move(file_path, os.path.join(folder_path, file_name))
         total_files_moved += 1
 
-print(f"Total number of files moved: {total_files_moved}")
+print(f"Download files sorted: {total_files_moved}")
