@@ -3,15 +3,15 @@
 import os
 import shutil
 
-# linux
-if os.path.isdir("/home/thederpykrafter/Downloads/"):
-    downloads_folder = "/home/thederpykrafter/Downloads/"
 # termux
-elif os.path.isdir("/data/data/com.termux/files/home/storage/downloads"):
+if os.path.isdir("/data/data/com.termux/"):
     downloads_folder = "/data/data/com.termux/files/home/storage/downloads"
 # windows
-elif os.path.isdir("C:\\Users\\thede\\Downloads"):
+elif os.path.isdir("C:\\Users"):
     downloads_folder = "C:\\Users\\thede\\Downloads"
+# linux
+else:
+    downloads_folder = "/home/thederpykrafter/Downloads/"
 
 total_files_moved = 0
 
@@ -37,7 +37,7 @@ for file_name in files:
             print(f"Created new directory: {file_extension}")
 
         # Move the file to the folder with matching extension
-        if not file_name.startswith("."):
+        if not file_name.startswith(".") and file_name.count(".") > 0:
             shutil.move(file_path, os.path.join(folder_path, file_name))
             total_files_moved += 1
             print(f"Moved file: {file_name}")
