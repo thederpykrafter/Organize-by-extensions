@@ -44,3 +44,10 @@ for file_name in files:
 
 if total_files_moved > 0:
     print(f"Download files sorted: {total_files_moved}")
+
+for root, dirs, files in os.walk(downloads_folder, topdown=False):
+    for dir_name in dirs:
+        dir_path = os.path.join(root, dir_name)
+        if not os.listdir(dir_path):
+            os.rmdir(dir_path)
+            print(f"Deleted empty folder: {dir_path}")
