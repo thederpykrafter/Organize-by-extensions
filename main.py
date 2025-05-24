@@ -42,6 +42,11 @@ for file_name in files:
             total_files_moved += 1
             print(f"Moved file: {file_name}")
 
+    elif os.path.isdir(file_path):
+        if os.listdir(file_path) == []:
+            os.rmdir(file_path)
+            print(f"Removed empty dir {file_path}")
+
 if total_files_moved > 0:
     print(f"Download files sorted: {total_files_moved}")
 
